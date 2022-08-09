@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.22.0/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
     <title>SESI6-CUYUNIVERSITY</title>
   </head>
@@ -12,11 +18,35 @@
     <div class="root">
       <nav>
         <a onclick="reRender()" id="home">Home</a>
-        <a onclick="changeTheme()" id="themeChanger" value="day" >Day</a>
-        <a onclick="greenMode()" id="Green" value="green">Green</a>
+        <a onclick="changeTheme()" id="themeChanger" value="day">Day</a>
+        <a onclick="greenMode()" id="green" value="green">Green</a>
         <a onclick="redMode()" id="red" value="red">Red</a>
-    </nav>
-      <h1>SESI6-<lined>CUYUNIVERSITY</lined>!</h1>
+        <label for="my-modal-6" class="btn btn-ghost modal-button" id="customTheme">Custom theme</label>
+      </nav>
+      <input type="checkbox" id="my-modal-6" class="modal-toggle" />
+      <div class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <h3 class="font-bold text-lg">
+            Pilih warna bg dan warna tulisan ya bre
+          </h3>
+          <p class="py-4">
+            <div class="form-control">
+              <label class="input-group">
+                <span>Background</span>
+                <input type="text" placeholder="#000000" class="input input-bordered" id="customBg" />
+              </label>
+              <label class="input-group">
+                <span>Text</span>
+                <input type="text" placeholder="#FFFFFF" class="input input-bordered" id="customText" />
+              </label>
+            </div>
+          </p>
+          <div class="modal-action">
+            <label for="my-modal-6" class="btn" onclick="customTheme()">Set!</label>
+          </div>
+        </div>
+      </div>
+      <h1 class="text-2xl">SESI6-<lined>CUYUNIVERSITY</lined>!</h1>
       <p id="info"></p>
     </div>
   </body>
